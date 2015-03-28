@@ -1,18 +1,25 @@
 // ==UserScript==
-// @name        Flowdock toggle direction
-// @namespace   Flowdock
-// @include     https://www.flowdock.com/*
-// @version     1
-// @grant       none
-// @require       http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js
+// @id             www.flowdock.com-7a5b7690-e5ff-48da-9951-7cfdf0d6967e@PMOCounter
+// @name           Flowdock toggle direction
+// @version        0.1
+// @namespace      Flowdock.com
+// @author         Shahin Azad
+// @description    Double click on message texts and toggle text direction. 
+// @include        https://www.flowdock.com*
+// @run-at         window-load
 // ==/UserScript==
-$(document).ready(function(){
-    $('.msg-body').dblclick(function(){
-	var current_dir = $(this).parent().css('direction');
-	if(current_dir == undefined || current_dir == 'ltr'){
-	    $(this).parent().css({direction: 'rtl'});
-	} else {
-	    $(this).parent().css({direction: 'ltr'});
-	}
-    });
+$(document).dblclick(function (event) {
+  if ($(event.target).attr('class') == 'msg-body') {
+    var current_obj = $(event.target);
+    if (current_obj.css('direction') == undefined || current_obj.css('direction') == 'ltr') {
+      current_obj.parent().css({
+        direction: 'rtl'
+      });
+    } else {
+      current_obj.parent().css({
+        direction: 'ltr'
+      });
+    }
+  }
 });
+
