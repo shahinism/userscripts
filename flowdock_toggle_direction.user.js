@@ -9,17 +9,18 @@
 // @run-at         window-load
 // ==/UserScript==
 $(document).dblclick(function (event) {
-  if ($(event.target).attr('class') == 'msg-body') {
-    var current_obj = $(event.target);
-    if (current_obj.css('direction') == undefined || current_obj.css('direction') == 'ltr') {
-      current_obj.parent().css({
-        direction: 'rtl'
-      });
-    } else {
-      current_obj.parent().css({
-        direction: 'ltr'
-      });
+    if ($(event.target).attr('class') == 'msg-body') {
+	var current_obj = $(event.target);
+	if (current_obj.css('direction') == undefined || current_obj.css('direction') == 'ltr') {
+	    current_obj.parent().css({
+		textAlign: 'right',
+		direction: 'rtl'
+	    });
+	} else {
+	    current_obj.parent().css({
+		textAlign: 'left',
+		direction: 'ltr'
+	    });
+	}
     }
-  }
 });
-
