@@ -9,6 +9,7 @@
 // @run-at         window-load
 // ==/UserScript==
 $(document).dblclick(function (event) {
+    event.preventDefault();
     if ($(event.target).attr('class') == 'msg-body') {
 	var current_obj = $(event.target);
 	if (current_obj.css('direction') == undefined || current_obj.css('direction') == 'ltr') {
