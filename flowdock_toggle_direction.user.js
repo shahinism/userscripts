@@ -4,6 +4,7 @@
 // @include     https://www.flowdock.com/*
 // @version     1
 // @grant       none
+// @require       http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js
 // ==/UserScript==
 $(document).ready(function(){
     $('.msg-body').dblclick(function(){
